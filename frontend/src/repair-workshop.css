@@ -1,0 +1,338 @@
+﻿/* ========================================
+   REPAIR WORKSHOP THEME
+   Professional Right-to-Repair Design
+   ======================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --safety-orange: #f97316;
+  --tool-blue: #0ea5e9;
+  --fixed-green: #10b981;
+  --broken-red: #ef4444;
+  --workshop-dark: #0f172a;
+  --workshop-darker: #020617;
+  --slate-light: #94a3b8;
+  --slate-lighter: #cbd5e1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--workshop-darker) 0%, var(--workshop-dark) 100%);
+  color: var(--slate-lighter);
+  min-height: 100vh;
+  cursor: default;
+}
+
+/* Circuit board background pattern */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(6, 182, 212, 0.03) 2px, rgba(6, 182, 212, 0.03) 4px),
+    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(6, 182, 212, 0.03) 2px, rgba(6, 182, 212, 0.03) 4px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Professional cursor */
+a, button, [role="button"], .clickable {
+  cursor: pointer !important;
+}
+
+/* Smooth transitions */
+* {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   ENHANCED CARDS
+   ======================================== */
+
+.stat-card {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--safety-orange), var(--tool-blue));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(249, 115, 22, 0.2);
+  border-color: rgba(249, 115, 22, 0.3);
+}
+
+.stat-card:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   PROFESSIONAL BUTTONS
+   ======================================== */
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--safety-orange) 0%, #ea580c 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.6);
+}
+
+/* ========================================
+   DEVICE CARDS
+   ======================================== */
+
+.device-card {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.device-card:hover {
+  background: rgba(30, 41, 59, 0.9);
+  border-color: var(--tool-blue);
+  transform: translateX(8px);
+  box-shadow: -4px 0 20px rgba(14, 165, 233, 0.3);
+}
+
+/* ========================================
+   GRADIENT TEXT
+   ======================================== */
+
+.gradient-heading {
+  background: linear-gradient(135deg, var(--safety-orange) 0%, var(--tool-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* ========================================
+   CHART ENHANCEMENTS
+   ======================================== */
+
+.chart-container {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.chart-container:hover {
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 8px 30px rgba(249, 115, 22, 0.1);
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(249, 115, 22, 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ========================================
+   REPAIR IMPACT BANNER
+   ======================================== */
+
+.impact-banner {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(14, 165, 233, 0.1) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-banner::before {
+  content: '♻️';
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem;
+  opacity: 0.1;
+}
+
+/* ========================================
+   SEARCH BAR
+   ======================================== */
+
+.search-bar {
+  background: rgba(30, 41, 59, 0.8);
+  border: 2px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  color: var(--slate-lighter);
+  font-size: 1rem;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: var(--tool-blue);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  background: rgba(30, 41, 59, 1);
+}
+
+.search-bar::placeholder {
+  color: var(--slate-light);
+}
+
+/* ========================================
+   CHAT BUBBLES
+   ======================================== */
+
+.chat-user {
+  background: linear-gradient(135deg, var(--tool-blue) 0%, #0284c7 100%);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 18px 18px 4px 18px;
+  max-width: 80%;
+  margin-left: auto;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.3);
+}
+
+.chat-assistant {
+  background: rgba(30, 41, 59, 0.8);
+  color: var(--slate-lighter);
+  padding: 1rem 1.5rem;
+  border-radius: 18px 18px 18px 4px;
+  max-width: 80%;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  position: relative;
+}
+
+.chat-assistant::before {
+  content: '🔧';
+  position: absolute;
+  left: -2.5rem;
+  top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--workshop-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--safety-orange), var(--tool-blue));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ea580c, #0284c7);
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 1rem;
+  }
+  
+  .chart-container {
+    padding: 1rem;
+  }
+  
+  .btn-primary {
+    padding: 0.75rem 1.5rem;
+  }
+}

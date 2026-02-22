@@ -1,0 +1,28 @@
+﻿{
+  "guides_sample": [
+    {
+      "guide_id": "12345",
+      "device": "iPhone 12",
+      "title": "iPhone 12 Battery Replacement",
+      "difficulty": "Moderate",
+      "steps": 15,
+      "components": ["battery", "adhesive", "connector"]
+    }
+  ],
+  "devices_sample": [
+    {
+      "device_id": "iphone_12",
+      "device_name": "iPhone 12",
+      "category": "Smartphone",
+      "repair_guides": 45
+    }
+  ],
+  "patterns_sample": [
+    {
+      "device_id": "iphone_12",
+      "component": "battery",
+      "failure_type": "degradation",
+      "frequency": 842
+    }
+  ]
+}
