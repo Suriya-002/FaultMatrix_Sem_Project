@@ -1,12 +1,13 @@
 ﻿import React from 'react'
 import CursorRipple from './components/CursorRipple'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
-import { Home, Database, MessageSquare, BarChart3, Sparkles } from 'lucide-react'
+import { Home, Database, MessageSquare, BarChart3, Sparkles, Layers } from 'lucide-react'
 import HomePage from './pages/HomePage'
 import Dashboard from './pages/Dashboard'
 import DevicesPage from './pages/DevicesPage'
 import PatternDiscoveryPage from './pages/PatternDiscoveryPage'
 import ChatPage from './pages/ChatPage'
+import SystemArchitecture from './pages/SystemArchitecture'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <NavLink to="/" icon={<Home size={20} />} label="Home" />
             <NavLink to="/dashboard" icon={<BarChart3 size={20} />} label="Dashboard" />
             <NavLink to="/devices" icon={<Database size={20} />} label="Devices" />`n            <NavLink to="/patterns" icon={<Sparkles size={20} />} label="Pattern Discovery" />
+            <NavLink to="/architecture" icon={<Layers size={20} />} label="How It Works" />
             <NavLink to="/chat" icon={<MessageSquare size={20} />} label="AI Chat" />
           </nav>
           
@@ -42,6 +44,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/devices" element={<DevicesPage />} />
           <Route path="/patterns" element={<PatternDiscoveryPage />} />
+          <Route path="/architecture" element={<SystemArchitecture />} />
             <Route path="/chat" element={<ChatPage />} />
           </Routes>
         </main>
